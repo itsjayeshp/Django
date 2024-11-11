@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome to SmartNotes!</h1>
+  <p>Today is {{ today }}</p>
+  <a href="{% url 'notes.list' %}" class="btn btn-primary">Check out these smart notes!</a>
+
+  <!-- Logout form -->
+  <form method="post" action="{% url 'notes.logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger mt-3">Logout</button>
+  </form>
+{% endblock %}
